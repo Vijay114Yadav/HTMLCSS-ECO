@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Shopping Cart</title>
+    <link rel="stylesheet" href="ai-eco.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Eco-Friendly Cart</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search Eco-Friendly...">
+            </div>
+            <div class="cart" onclick="toggleCart()">
+                <span id="cart-count">0</span> Items
+            </div>
+        </nav>
+    </header>
+
+    <section class="content" id="about">
+        <h3 id="a">About Us</h3>
+        <p>Earth India is dedicated to creating a sustainable and eco-friendly future...</p>
+    </section>
+
+    <section class="content" id="mission">
+        <h3 style="background-color: rgb(0, 179, 255); text-align: center;">Our Products</h3>
+
+        <!-- Category Cards (Products) -->
+        <div class="product-cards">
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="med-logo.jpg" alt="Medicine">
+                <h4>Medicine</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2>  Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+
+            <div class="card" onclick="showSubCards('Furniture')">
+                <img src="furniture.jpg" alt="Furniture">
+                <h4>Furniture</h4>
+                <span><del> Price:- &#8377 200</del>   20%off</span>
+                <h2>  Price:- &#8377 180</h2>
+                <p>Sustainable and stylish furniture for every home.</p>
+            </div>
+
+            <div class="card" onclick="showSubCards('Clothes')">
+                <img src="med2.webp" alt="Clothes">
+                <h4>Clothes</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2>  Price:- &#8377 180rs</h2>
+                <p>Eco-friendly and comfortable clothing for all seasons.</p>
+            </div>
+        
+            <div class="card" onclick="showSubCards('Stationery')">
+                <img src="med4.webp" alt="Stationery">
+                <h4>Stationery</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2>  Price:- &#8377 180rs</h2>
+                <p>Eco-friendly stationery items for daily use.</p>
+            </div>
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="med4.webp" alt="Medicine">
+                <h4>AYush Kwath</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2>  Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="fur3.jpeg" alt="Medicine">
+                <h4>Wooden AramChair</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2>  Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="med3.webp" alt="Medicine">
+                <h4>Plant Based EyeCare</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2> Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="med1.jpg" alt="Medicine">
+                <h4>Aller GI</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2> Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="fur1.webp" alt="Medicine">
+                <h4>Wooden Almory</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2> Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="pen.webp" alt="Medicine">
+                <h4>Pens</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2> Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="3brushes.webp" alt="Medicine">
+                <h4>WoodenBrush</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2> Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+            <div class="card" onclick="showSubCards('Medicine')">
+                <img src="toothbrush.webp" alt="Medicine">
+                <h4>Toothbrush</h4>
+                <span><del>  Price:- &#8377 200rs</del>    20%off</span>
+                <h2> Price:- &#8377 180rs</h2>
+                <p>Organic and eco-friendly medicines for a healthier future.</p>
+            </div>
+            
+
+        </div>
+
+       
+        <!-- Sub-cards Section (Hidden Initially) -->
+        <div id="sub-cards" class="sub-cards"></div>
+
+        <!-- Cart Popup Section -->
+        <div id="cart-popup" class="cart-popup">
+            <h3>Your Cart</h3>
+            <div id="cart-items"></div>
+            <div id="total-price">
+                <h4>Total Price: ₹0</h4>
+            </div>
+            <button id="checkout-btn">Proceed to Checkout</button>
+            <button class="close-cart" onclick="toggleCart()">Close Cart</button>
+        </div>
+    </sectio>
+
+    <footer>
+        <p>&copy; 2025 Earth India. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        let cartCount = document.getElementById("cart-count");
+
+        // Show Sub-cards based on selected category
+        function showSubCards(category) {
+            const subCardsContainer = document.getElementById("sub-cards");
+            subCardsContainer.innerHTML = ''; // Clear existing sub-cards
+
+            let subCards = [];
+
+            // Define sub-cards based on category
+            if (category === 'Medicine') {
+                subCards = [
+                    { name1: 'Herbal Pain Relief', price: 200, discount: 10 },
+                  
+                   
+                ];
+            } else if (category === 'Furniture') {
+                subCards = [
+                    { name: 'Recycled Wooden Chair', price: 2000, discount: 15 },   
+                ];
+            } else if (category === 'Clothes') {
+                subCards = [
+                    { name: 'Organic Cotton T-shirt', price: 600, discount: 10 },
+                   
+                ];
+            } else if (category === 'Stationery') {
+                subCards = [
+                    { name: 'Recycled Paper Notebook', price: 250, discount: 10 },
+                    
+                ];
+            }
+
+            // Generate sub-cards dynamically
+//-------------------medicine-------------------------------------//
+            subCards.forEach(item => {
+                const subCard = document.createElement("div");
+                subCard.classList.add("sub-card");
+                subCard.innerHTML = `
+                    <img src="med2.webp" alt="${item.name}">,
+                    <h4>${item.name}</h4>
+                    <p>Price: ₹${item.price}</p>
+                    <p>Discount: ${item.discount}% off</p>
+                    <button class="add-to-cart" onclick="addToCart('${item.name}', ${item.price}, ${item.discount})">Add to Cart</button>`;
+                subCardsContainer.appendChild(subCard);
+            });
+            subCards.forEach(item => {
+                const subCard = document.createElement("div");
+                subCard.classList.add("sub-card");
+                subCard.innerHTML = `
+                    <img src="med3.webp" alt="${item.name}">,
+                    <h4>${item.name}</h4>
+                    <p>Price: ₹${item.price}</p>
+                    <p>Discount: ${item.discount}% off</p>
+                    <button class="add-to-cart" onclick="addToCart('${item.name}', ${item.price}, ${item.discount})">Add to Cart</button>`;
+                subCardsContainer.appendChild(subCard);
+            });
+            subCards.forEach(item => {
+                const subCard = document.createElement("div");
+                subCard.classList.add("sub-card");
+                subCard.innerHTML = `
+                    <img src="med4.webp" alt="${item.name}">,
+                    <h4>${item.name}</h4>
+                    <p>Price: ₹${item.price}</p>
+                    <p>Discount: ${item.discount}% off</p>
+                    <button class="add-to-cart" onclick="addToCart('${item.name}', ${item.price}, ${item.discount})">Add to Cart</button>`;
+                subCardsContainer.appendChild(subCard);
+            });
+            subCards.forEach(item => {
+                const subCard = document.createElement("div");
+                subCard.classList.add("sub-card");
+                subCard.innerHTML = `
+                    <img src="med1.jpg" alt="${item.name}">,
+                    <h4>${item.name}</h4>
+                    <p>Price: ₹${item.price}</p>
+                    <p>Discount: ${item.discount}% off</p>
+                    <button class="add-to-cart" onclick="addToCart('${item.name}', ${item.price}, ${item.discount})">Add to Cart</button>`;
+                subCardsContainer.appendChild(subCard);
+            });
+//------------------------------medicine--------------------------//
+
+            // Show the sub-cards section
+            subCardsContainer.style.display = 'flex';
+            
+        }
+
+        // Add item to cart
+        function addToCart(name, price, discount) {
+            let discountedPrice = price - (price * discount / 100);
+            cart.push({ name, price, discount, discountedPrice });
+            updateCart();
+        }
+
+        // Update cart UI
+        function updateCart() {
+            cartCount.textContent = cart.length;
+            const cartItemsContainer = document.getElementById("cart-items");
+
+            // Clear the cart display
+            cartItemsContainer.innerHTML = "";
+
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement("div");
+                itemElement.classList.add("cart-item");
+                itemElement.innerHTML = `
+                    <div class="cart-item-details">
+                        <p>${item.name}</p>
+                        <p>₹${item.price} <span class="discounted-price">₹${item.discountedPrice}</span></p>
+                    </div>
+                    <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+                totalPrice += item.discountedPrice;
+            });
+
+            // Display total price
+            document.getElementById("total-price").innerHTML = `<h4>Total Price: ₹${totalPrice}</h4>`;
+
+            // Show the cart popup with animation
+            const cartPopup = document.getElementById("cart-popup");
+            cartPopup.classList.add('show');
+        }
+
+        // Remove item from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Toggle Cart Popup
+        function toggleCart() {
+            const cartPopup = document.getElementById("cart-popup");
+            cartPopup.classList.toggle('show');
+        }
+
+        // Checkout function (Placeholder for checkout)
+        document.getElementById("checkout-btn").addEventListener("click", () => {
+            alert("Proceeding to checkout...");
+        });
+
+        // Close cart popup on clicking outside
+        window.onclick = function(event) {
+            if (event.target === document.getElementById("cart-popup")) {
+                document.getElementById("cart-popup").classList.remove('show');
+            }
+        };
+    </script>
+</body>
+</html>
