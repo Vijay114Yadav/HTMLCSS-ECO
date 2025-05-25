@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Circular Image with Animated Icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #d4e196;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%; /* Makes the image circular */
+            object-fit: cover;
+            border: 5px solid rgb(37, 31, 31);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .container:hover .image {
+            transform: scale(1.1); /* Slightly enlarge image on hover */
+        }
+
+        .icons {
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0; /* Hide icons initially */
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .container:hover .icon {
+            opacity: 1; /* Show icons on hover */
+        }
+
+        /* Positioning Icons in Circular Path */
+        .icon:nth-child(1) { transform: rotate(0deg) translate(0); }
+        .icon:nth-child(2) { transform: rotate(45deg) translate(0); }
+        .icon:nth-child(3) { transform: rotate(90deg) translate(0); }
+        .icon:nth-child(4) { transform: rotate(135deg) translate(0); }
+        .icon:nth-child(5) { transform: rotate(180deg) translate(0); }
+        .icon:nth-child(6) { transform: rotate(225deg) translate(0); }
+        .icon:nth-child(7) { transform: rotate(270deg) translate(0); }
+        .icon:nth-child(8) { transform: rotate(315deg) translate(0); }
+
+        .container:hover .icon:nth-child(1) { transform: rotate(0deg) translate(185px); }
+        .container:hover .icon:nth-child(2) { transform: rotate(45deg) translate(185px); }
+        .container:hover .icon:nth-child(3) { transform: rotate(90deg) translate(185px); }
+        .container:hover .icon:nth-child(4) { transform: rotate(135deg) translate(185px); }
+        .container:hover .icon:nth-child(5) { transform: rotate(180deg) translate(185px); }
+        .container:hover .icon:nth-child(6) { transform: rotate(225deg) translate(185px); }
+        .container:hover .icon:nth-child(7) { transform: rotate(270deg) translate(185px); }
+        .container:hover .icon:nth-child(8) { transform: rotate(315deg) translate(185px); }
+
+        /* Assigning Different Colors to Each Icon */
+        .icon:nth-child(1) { color: #e74c3c; } /* Red */
+        .icon:nth-child(2) { color: #8e44ad; } /* Purple */
+        .icon:nth-child(3) { color: #3498db; } /* Blue */
+        .icon:nth-child(4) { color: #1abc9c; } /* Turquoise */
+        .icon:nth-child(5) { color: #27ae60; } /* Green */
+        .icon:nth-child(6) { color: #f39c12; } /* Orange */
+        .icon:nth-child(7) { color: #d35400; } /* Dark Orange */
+        .icon:nth-child(8) { color: #c0392b; } /* Dark Red */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Ratan-Tata.webp" alt="Family Picture" class="image">
+        <div class="icons">
+            <i class="icon fa-regular fa-envelope-open"></i>
+            <i class="icon fa-brands fa-edge"></i>
+            <i class="icon fa-solid fa-palette"></i>
+            <i class="icon fa-regular fa-clipboard"></i>
+            <i class="icon fa-solid fa-desktop"></i>
+            <i class="icon fa-brands fa-microsoft"></i>
+            <i class="icon fa-solid fa-file-pen"></i>
+            <i class="icon fa-brands fa-firefox-browser"></i>
+        </div>
+    </div>
+</body>
+</html>
